@@ -1,0 +1,216 @@
+.home {
+  padding-top: var(--header-height);
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-16) var(--space-6);
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(249, 115, 22, 0.15), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 60%, rgba(249, 115, 22, 0.08), transparent);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  max-width: 800px;
+  animation: slideUp 0.6s ease-out;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.1;
+  margin-bottom: var(--space-6);
+  letter-spacing: -0.02em;
+}
+
+.hero-description {
+  font-size: var(--font-size-xl);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-8);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Install Section */
+.install-section {
+  padding: var(--space-8) 0;
+  background-color: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-border-primary);
+  border-bottom: 1px solid var(--color-border-primary);
+}
+
+.install-section .code-block {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Section Header */
+.section-header {
+  text-align: center;
+  margin-bottom: var(--space-12);
+}
+
+.section-header h2 {
+  margin-bottom: var(--space-4);
+}
+
+.section-header p {
+  font-size: var(--font-size-lg);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Features Section */
+.features-section {
+  padding: var(--space-24) 0;
+}
+
+/* Quick Start Section */
+.quickstart-section {
+  padding: var(--space-24) 0;
+  background-color: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-border-primary);
+  border-bottom: 1px solid var(--color-border-primary);
+}
+
+.quickstart-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+.quickstart-text h2 {
+  margin-bottom: var(--space-4);
+}
+
+.quickstart-text p {
+  margin-bottom: var(--space-6);
+  font-size: var(--font-size-lg);
+}
+
+.quickstart-code {
+  overflow: hidden;
+}
+
+/* Packages Section */
+.packages-section {
+  padding: var(--space-24) 0;
+}
+
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-6);
+}
+
+.package-card {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  transition: all var(--transition-normal);
+}
+
+.package-card:hover {
+  border-color: var(--color-brand-primary);
+  transform: translateY(-2px);
+}
+
+.package-card.coming-soon {
+  opacity: 0.6;
+}
+
+.package-card.coming-soon:hover {
+  transform: none;
+  border-color: var(--color-border-primary);
+}
+
+.package-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.package-type {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  color: var(--color-accent-cyan);
+  padding: var(--space-1) var(--space-2);
+  background-color: rgba(6, 182, 212, 0.1);
+  border-radius: var(--radius-sm);
+}
+
+.package-version {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.package-coming-soon {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.package-name {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-base);
+  color: var(--color-brand-primary);
+  margin-bottom: var(--space-2);
+}
+
+.package-description {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+}
+
+@media (max-width: 1024px) {
+  .quickstart-content {
+    grid-template-columns: 1fr;
+  }
+
+  .quickstart-text {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding: var(--space-16) var(--space-4);
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-description {
+    font-size: var(--font-size-base);
+  }
+}
