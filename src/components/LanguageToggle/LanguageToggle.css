@@ -18,6 +18,9 @@
   border-radius: var(--radius-sm);
   cursor: pointer;
   transition: all var(--transition-fast);
+  height: 28px; /* Match inner button height */
+  display: flex;
+  align-items: center;
 }
 
 .lang-btn:hover {
