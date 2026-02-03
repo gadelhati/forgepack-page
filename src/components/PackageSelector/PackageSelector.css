@@ -1,0 +1,137 @@
+.package-selector {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.current-package {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--color-background-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 250px;
+}
+
+.current-package:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.current-package-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.package-icon {
+  font-size: 1.2rem;
+}
+
+.package-name {
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.dropdown-arrow {
+  color: var(--color-text-secondary);
+  font-size: 0.8rem;
+  transition: transform 0.2s ease;
+}
+
+.package-selector:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.package-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.2s ease;
+  z-index: 1000;
+}
+
+.package-selector:hover .package-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.package-option {
+  display: block;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  color: var(--color-text-primary);
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color 0.2s ease;
+}
+
+.package-option:last-child {
+  border-bottom: none;
+}
+
+.package-option:hover {
+  background: var(--color-background-secondary);
+}
+
+.package-option.active {
+  background: var(--color-primary-subtle);
+  color: var(--color-primary);
+}
+
+.package-option-main {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.package-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.package-option .package-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.package-description {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  line-height: 1.2;
+}
+
+.package-option.active .package-description {
+  color: var(--color-primary-dark);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .package-selector {
+    width: 100%;
+  }
+  
+  .current-package {
+    min-width: auto;
+    width: 100%;
+  }
+  
+  .package-dropdown {
+    left: 0;
+    right: 0;
+  }
+}

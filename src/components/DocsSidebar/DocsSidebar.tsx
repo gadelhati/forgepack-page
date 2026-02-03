@@ -14,55 +14,112 @@ export function DocsSidebar({ isOpen, onClose }: DocsSidebarProps) {
 
   const isActive = (path: string) => location.pathname === path;
 
-  const sidebarSections = [
-    {
-      title: t.sidebar.gettingStarted,
-      items: [
-        { label: t.sidebar.installation, path: '/docs/request/getting-started' },
-        { label: t.sidebar.quickStart, path: '/docs/request/quick-start' },
-      ],
-    },
-    {
-      title: t.sidebar.guides,
-      items: [
-        { label: t.sidebar.authentication, path: '/docs/request/authentication' },
-        { label: t.sidebar.routeProtection, path: '/docs/request/route-protection' },
-        { label: t.sidebar.requests, path: '/docs/request/requests' },
-        { label: t.sidebar.crudOperations, path: '/docs/request/crud-operations' },
-        { label: t.sidebar.tokenManagement, path: '/docs/request/token-management' },
-      ],
-    },
-    {
-      title: t.sidebar.apiReference,
-      items: [
-        { label: t.sidebar.hooks, path: '/docs/request/api/hooks' },
-        { label: t.sidebar.components, path: '/docs/request/api/components' },
-        { label: t.sidebar.services, path: '/docs/request/api/services' },
-        { label: t.sidebar.types, path: '/docs/request/api/types' },
-        { label: t.sidebar.utilities, path: '/docs/request/api/utilities' },
-      ],
-    },
-    {
-      title: t.sidebar.examples,
-      items: [
-        { label: t.sidebar.loginForm, path: '/docs/request/examples/login-form' },
-        { label: t.sidebar.dashboard, path: '/docs/request/examples/dashboard' },
-        { label: t.sidebar.usersList, path: '/docs/request/examples/users-list' },
-      ],
-    },
-  ];
+  // Detect package from URL path
+  const pathSegments = location.pathname.split('/');
+  const currentPackage = pathSegments[2] || 'request'; // /docs/[package]/...
+  
+  const getPackageConfig = (pkg: string) => {
+    switch (pkg) {
+      case 'leaflet':
+        return {
+          name: '@forgepack/leaflet',
+          version: 'v1.0.0',
+          sections: [
+            {
+              title: t.sidebar.gettingStarted,
+              items: [
+                { label: t.sidebar.installation, path: '/docs/leaflet/getting-started' },
+                { label: t.sidebar.quickStart, path: '/docs/leaflet/quick-start' },
+              ],
+            },
+            {
+              title: t.sidebar.guides,
+              items: [
+                { label: t.sidebar.mapConfiguration, path: '/docs/leaflet/map-configuration' },
+                { label: t.sidebar.layerManagement, path: '/docs/leaflet/layer-management' },
+                { label: t.sidebar.interactiveDrawing, path: '/docs/leaflet/interactive-drawing' },
+                { label: t.sidebar.fileProcessing, path: '/docs/leaflet/file-processing' },
+                { label: t.sidebar.styling, path: '/docs/leaflet/styling' },
+              ],
+            },
+            {
+              title: t.sidebar.apiReference,
+              items: [
+                { label: t.sidebar.hooks, path: '/docs/leaflet/api/hooks' },
+                { label: t.sidebar.components, path: '/docs/leaflet/api/components' },
+                { label: t.sidebar.utilities, path: '/docs/leaflet/api/utilities' },
+                { label: t.sidebar.types, path: '/docs/leaflet/api/types' },
+              ],
+            },
+            {
+              title: t.sidebar.examples,
+              items: [
+                { label: t.sidebar.basicMap, path: '/docs/leaflet/examples/basic-map' },
+                { label: t.sidebar.markers, path: '/docs/leaflet/examples/markers' },
+                { label: t.sidebar.routePlanning, path: '/docs/leaflet/examples/route-planning' },
+                { label: t.sidebar.imageOverlays, path: '/docs/leaflet/examples/image-overlays' },
+              ],
+            },
+          ],
+        };
+      default: // 'request'
+        return {
+          name: '@forgepack/request',
+          version: 'v1.1.1',
+          sections: [
+            {
+              title: t.sidebar.gettingStarted,
+              items: [
+                { label: t.sidebar.installation, path: '/docs/request/getting-started' },
+                { label: t.sidebar.quickStart, path: '/docs/request/quick-start' },
+              ],
+            },
+            {
+              title: t.sidebar.guides,
+              items: [
+                { label: t.sidebar.authentication, path: '/docs/request/authentication' },
+                { label: t.sidebar.routeProtection, path: '/docs/request/route-protection' },
+                { label: t.sidebar.requests, path: '/docs/request/requests' },
+                { label: t.sidebar.crudOperations, path: '/docs/request/crud-operations' },
+                { label: t.sidebar.tokenManagement, path: '/docs/request/token-management' },
+              ],
+            },
+            {
+              title: t.sidebar.apiReference,
+              items: [
+                { label: t.sidebar.hooks, path: '/docs/request/api/hooks' },
+                { label: t.sidebar.components, path: '/docs/request/api/components' },
+                { label: t.sidebar.services, path: '/docs/request/api/services' },
+                { label: t.sidebar.types, path: '/docs/request/api/types' },
+                { label: t.sidebar.utilities, path: '/docs/request/api/utilities' },
+              ],
+            },
+            {
+              title: t.sidebar.examples,
+              items: [
+                { label: t.sidebar.loginForm, path: '/docs/request/examples/login-form' },
+                { label: t.sidebar.dashboard, path: '/docs/request/examples/dashboard' },
+                { label: t.sidebar.usersList, path: '/docs/request/examples/users-list' },
+              ],
+            },
+          ],
+        };
+    }
+  };
+
+  const packageConfig = getPackageConfig(currentPackage);
 
   return (
     <>
       <div className={`sidebar-overlay ${isOpen ? 'visible' : ''}`} onClick={onClose} />
       <aside className={`docs-sidebar ${isOpen ? 'open' : ''}`}>
         <div className="sidebar-header">
-          <span className="sidebar-package-name">@forgepack/request</span>
-          <span className="sidebar-version">v1.1.1</span>
+          <span className="sidebar-package-name">{packageConfig.name}</span>
+          <span className="sidebar-version">{packageConfig.version}</span>
         </div>
 
         <nav className="sidebar-nav">
-          {sidebarSections.map((section) => (
+          {packageConfig.sections.map((section) => (
             <div key={section.title} className="sidebar-section">
               <h3 className="sidebar-section-title">{section.title}</h3>
               <ul className="sidebar-list">

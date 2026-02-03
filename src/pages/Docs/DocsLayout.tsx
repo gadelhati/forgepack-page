@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { DocsSidebar } from '../../components/DocsSidebar/DocsSidebar';
+import { PackageSelector } from '../../components/PackageSelector/PackageSelector';
 import './DocsLayout.css';
 
 export function DocsLayout() {
@@ -18,6 +19,9 @@ export function DocsLayout() {
       <DocsSidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
       <main className="docs-main">
         <div className="docs-content">
+          <div className="docs-header">
+            <PackageSelector />
+          </div>
           <Outlet />
         </div>
       </main>

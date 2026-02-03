@@ -29,8 +29,16 @@ export function Home() {
       name: '@forgepack/request',
       description: 'Production-ready HTTP client with JWT authentication for React',
       type: 'npm',
-      version: '1.0.0',
+      version: '1.1.1',
       path: '/docs/request',
+      available: true,
+    },
+    {
+      name: '@forgepack/leaflet',
+      description: 'Interactive maps and geospatial data visualization for React',
+      type: 'npm',
+      version: '1.0.0',
+      path: '/docs/leaflet',
       available: true,
     },
     {
