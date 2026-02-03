@@ -22,7 +22,7 @@ export const translations = {
     // Features
     features: {
       title: 'Why Forgepack?',
-      subtitle: 'Enterprise-grade packages designed for modern development workflows.',
+      subtitle: 'Explore nosso ecossistema crescente de pacotes bem documentados e prontos para produção.',
       items: [
         {
           icon: '🔐',
@@ -100,12 +100,17 @@ export const translations = {
     // Footer
     footer: {
       description: 'Production-ready packages for modern web development.',
+      packages: 'Packages',
+      npmPackages: 'NPM Packages',
+      mavenPackages: 'Maven Packages',
       resources: 'Resources',
       documentation: 'Documentation',
       examples: 'Examples',
       changelog: 'Changelog',
       community: 'Community',
       twitter: 'Twitter',
+      contributing: 'Contributing',
+      codeOfConduct: 'Code of Conduct',
       discord: 'Discord',
       legal: 'Legal',
       license: 'MIT License',
@@ -177,7 +182,7 @@ export const translations = {
     // Packages
     packages: {
       title: 'Pacotes',
-      subtitle: 'Nosso ecossistema crescente de pacotes prontos para produção.',
+      subtitle: 'Explore nosso ecossistema crescente de pacotes bem documentados e prontos para produção.',
       npm: 'Pacotes NPM',
       maven: 'Pacotes Maven',
       viewDocs: 'Ver Docs',
@@ -219,11 +224,15 @@ export const translations = {
     footer: {
       description: 'Pacotes prontos para produção para desenvolvimento web moderno.',
       resources: 'Recursos',
+      npmPackages: 'Pacotes NPM',
+      mavenPackages: 'Pacotes Maven',
       documentation: 'Documentação',
       examples: 'Exemplos',
       changelog: 'Changelog',
       community: 'Comunidade',
       twitter: 'Twitter',
+      contributing: 'Contribuindo',
+      codeOfConduct: 'Código de Conduta',
       discord: 'Discord',
       legal: 'Legal',
       license: 'Licença MIT',

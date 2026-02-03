@@ -17,9 +17,20 @@ export function Footer() {
         </div>
 
         <div className="footer-links">
+
           <div className="footer-column">
             <h4>{t.footer.resources}</h4>
             <ul>
+              <li>
+                <a href="https://www.npmjs.com/org/forgepack" target="_blank" rel="noopener noreferrer">
+                  {t.footer.npmPackages}
+                </a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/org/forgepack" target="_blank" rel="noopener noreferrer">
+                  {t.footer.mavenPackages}
+                </a>
+              </li>
               <li><Link to="/docs/request">{t.footer.documentation}</Link></li>
               <li><Link to="/docs/request/examples">{t.footer.examples}</Link></li>
               <li>
@@ -43,6 +54,16 @@ export function Footer() {
                   {t.footer.twitter}
                 </a>
               </li>
+              <li>
+                <a href="https://github.com/forgepack/request/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">
+                  {t.footer.contributing}
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/forgepack/request/blob/main/CODE_OF_CONDUCT.md" target="_blank" rel="noopener noreferrer">
+                  {t.footer.codeOfConduct}
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -50,7 +71,7 @@ export function Footer() {
             <h4>{t.footer.legal}</h4>
             <ul>
               <li>
-                <a href="https://github.com/forgepack/request/blob/main/LICENCE" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/forgepack/request/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">
                   {t.footer.license}
                 </a>
               </li>
