@@ -99,7 +99,7 @@ export const translations = {
       discord: 'Discord',
       legal: 'Legal',
       license: 'MIT License',
-      copyright: '© 2024 Forgepack. All rights reserved.',
+      copyright: '© 2025 Forgepack. All rights reserved.',
     },
     // Docs
     docs: {
@@ -207,7 +207,7 @@ export const translations = {
       discord: 'Discord',
       legal: 'Legal',
       license: 'Licença MIT',
-      copyright: '© 2024 Forgepack. Todos os direitos reservados.',
+      copyright: '© 2025 Forgepack. Todos os direitos reservados.',
     },
     // Docs
     docs: {
