@@ -32,6 +32,10 @@ export function Home() {
       version: '1.1.1',
       path: '/docs/request',
       available: true,
+      tags: ['react', 'typescript', 'jwt', 'http-client', 'authentication'],
+      githubRepo: 'forgepack/request',
+      downloads: '12.5k',
+      stars: 87,
     },
     {
       name: '@forgepack/leaflet',
@@ -40,6 +44,10 @@ export function Home() {
       version: '1.0.0',
       path: '/docs/leaflet',
       available: true,
+      tags: ['react', 'typescript', 'maps', 'leaflet', 'geospatial', 'maritime'],
+      githubRepo: 'forgepack/leaflet',
+      downloads: '2.1k',
+      stars: 34,
     },
     {
       name: '@forgepack/auth-jwt',
@@ -48,6 +56,10 @@ export function Home() {
       version: '-',
       path: '#',
       available: false,
+      tags: ['spring-boot', 'jwt', 'security', 'authentication'],
+      githubRepo: '',
+      downloads: '-',
+      stars: 0,
     },
     {
       name: '@forgepack/crud',
@@ -56,6 +68,10 @@ export function Home() {
       version: '-',
       path: '#',
       available: false,
+      tags: ['react', 'crud', 'forms', 'components'],
+      githubRepo: '',
+      downloads: '-',
+      stars: 0,
     },
     {
       name: '@forgepack/datatable',
@@ -64,6 +80,10 @@ export function Home() {
       version: '-',
       path: '#',
       available: false,
+      tags: ['react', 'table', 'pagination', 'sorting'],
+      githubRepo: '',
+      downloads: '-',
+      stars: 0,
     },
   ];
 
@@ -147,23 +167,80 @@ export function Home() {
           </div>
           <div className="packages-grid">
             {packages.map((pkg) => (
-              <div key={pkg.name} className={`package-card ${!pkg.available ? 'coming-soon' : ''}`}>
-                <div className="package-header">
-                  <span className="package-type">{pkg.type}</span>
-                  {pkg.available ? (
-                    <span className="package-version">v{pkg.version}</span>
-                  ) : (
+              pkg.available ? (
+                <Link 
+                  key={pkg.name} 
+                  to={pkg.path} 
+                  className="package-card clickable"
+                >
+                  {/* Name and Type in same line */}
+                  <div className="package-name-row">
+                    <h3 className="package-name">{pkg.name}</h3>
+                    <span className="package-type">{pkg.type}</span>
+                  </div>
+                  <p className="package-description">{pkg.description}</p>
+                  
+                  {/* Tags */}
+                  <div className="package-tags">
+                    {pkg.tags.map((tag, index) => (
+                      <span key={index} className="package-tag">{tag}</span>
+                    ))}
+                  </div>
+                  
+                  {/* Bottom row with version and stats */}
+                  <div className="package-bottom">
+                    <div className="package-info">
+                      <span className="package-version">v{pkg.version}</span>
+                      <div className="stat-item">
+                        <span className="stat-icon">↓</span>
+                        <span className="stat-value">{pkg.downloads}</span>
+                      </div>
+                      <div className="stat-item">
+                        <span className="stat-icon">☆</span>
+                        <span className="stat-value">{pkg.stars}</span>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              ) : (
+                <div key={pkg.name} className="package-card coming-soon">
+                  {/* Name and Type in same line */}
+                  <div className="package-name-row">
+                    <h3 className="package-name">{pkg.name}</h3>
+                    <span className="package-type">{pkg.type}</span>
+                  </div>
+                  <p className="package-description">{pkg.description}</p>
+                  
+                  {/* Tags */}
+                  <div className="package-tags">
+                    {pkg.tags.map((tag, index) => (
+                      <span key={index} className="package-tag">{tag}</span>
+                    ))}
+                  </div>
+                  
+                  {/* Bottom row with version, stats and Coming Soon */}
+                  <div className="package-bottom">
+                    <div className="package-info">
+                      {pkg.version && pkg.version !== '-' && (
+                        <span className="package-version">v{pkg.version}</span>
+                      )}
+                      {pkg.downloads && pkg.downloads !== '-' && pkg.downloads !== '0' && (
+                        <div className="stat-item">
+                          <span className="stat-icon">↓</span>
+                          <span className="stat-value">{pkg.downloads}</span>
+                        </div>
+                      )}
+                      {pkg.stars && pkg.stars > 0 && pkg.stars !== '0' && pkg.stars !== 0 && (
+                        <div className="stat-item">
+                          <span className="stat-icon">☆</span>
+                          <span className="stat-value">{pkg.stars}</span>
+                        </div>
+                      )}
+                    </div>
                     <span className="package-coming-soon">{t.packages.comingSoon}</span>
-                  )}
+                  </div>
                 </div>
-                <h3 className="package-name">{pkg.name}</h3>
-                <p className="package-description">{pkg.description}</p>
-                {pkg.available && (
-                  <Link to={pkg.path} className="btn btn-secondary btn-sm">
-                    {t.packages.viewDocs}
-                  </Link>
-                )}
-              </div>
+              )
             ))}
           </div>
         </div>

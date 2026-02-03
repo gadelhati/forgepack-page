@@ -64,6 +64,8 @@ export const translations = {
       maven: 'Maven Packages',
       viewDocs: 'View Docs',
       comingSoon: 'Coming Soon',
+      downloads: 'Downloads',
+      stars: 'Stars',
     },
     // Sidebar
     sidebar: {
@@ -187,6 +189,8 @@ export const translations = {
       maven: 'Pacotes Maven',
       viewDocs: 'Ver Docs',
       comingSoon: 'Em Breve',
+      downloads: 'Downloads',
+      stars: 'Estrelas',
     },
     // Sidebar
     sidebar: {
