@@ -224,7 +224,7 @@ export function Home() {
                           <span className="stat-value">{pkg.downloads}</span>
                         </div>
                       )}
-                      {pkg.stars && pkg.stars > 0 && pkg.stars !== '0' && pkg.stars !== 0 && (
+                      {pkg.stars && pkg.stars > 0 && (
                         <div className="stat-item">
                           <span className="stat-icon">☆</span>
                           <span className="stat-value">{pkg.stars}</span>
