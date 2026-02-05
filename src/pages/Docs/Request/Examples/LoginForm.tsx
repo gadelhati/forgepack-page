@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useLanguage } from '../../i18n/LanguageContext';
-import { CodeBlock } from '../../components/CodeBlock/CodeBlock';
+import { useLanguage } from '../../../../i18n/LanguageContext';
+import { CodeBlock } from '../../../../components/CodeBlock/CodeBlock';
 
 export function ExampleLoginForm() {
   const { language } = useLanguage();
@@ -101,7 +101,7 @@ export function LoginPage() {
       <CodeBlock code={code} language="tsx" filename="src/pages/LoginPage.tsx" />
 
       <nav className="docs-nav">
-        <Link to="/docs/request/api/utilities" className="docs-nav-link">
+        <Link to="/docs/request/reference/utilities" className="docs-nav-link">
           <span className="docs-nav-label">Previous</span>
           <span className="docs-nav-title">Utilities API</span>
         </Link>

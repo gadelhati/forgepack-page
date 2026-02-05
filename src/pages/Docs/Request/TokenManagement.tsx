@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useLanguage } from '../../i18n/LanguageContext';
-import { CodeBlock } from '../../components/CodeBlock/CodeBlock';
+import { useLanguage } from '../../../i18n/LanguageContext';
+import { CodeBlock } from '../../../components/CodeBlock/CodeBlock';
 
 export function TokenManagement() {
   const { language } = useLanguage();
@@ -167,7 +167,7 @@ const STORAGE_KEY = 'auth_token'
           <span className="docs-nav-label">{t.prev.split(':')[0]}</span>
           <span className="docs-nav-title">{t.prev.split(':')[1]}</span>
         </Link>
-        <Link to="/docs/request/api/hooks" className="docs-nav-link next">
+        <Link to="/docs/request/reference/hooks" className="docs-nav-link next">
           <span className="docs-nav-label">{t.next.split(':')[0]}</span>
           <span className="docs-nav-title">{t.next.split(':')[1]}</span>
         </Link>

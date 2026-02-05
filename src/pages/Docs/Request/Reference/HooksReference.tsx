@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useLanguage } from '../../i18n/LanguageContext';
-import { CodeBlock } from '../../components/CodeBlock/CodeBlock';
+import { useLanguage } from '../../../../i18n/LanguageContext';
+import { CodeBlock } from '../../../../components/CodeBlock/CodeBlock';
 
 export function ApiHooks() {
   const { language } = useLanguage();
@@ -64,7 +64,7 @@ export function ApiHooks() {
           <span className="docs-nav-label">Previous</span>
           <span className="docs-nav-title">Token Management</span>
         </Link>
-        <Link to="/docs/request/api/components" className="docs-nav-link next">
+        <Link to="/docs/request/reference/components" className="docs-nav-link next">
           <span className="docs-nav-label">Next</span>
           <span className="docs-nav-title">Components API</span>
         </Link>

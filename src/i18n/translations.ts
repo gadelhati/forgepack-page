@@ -75,6 +75,7 @@ export const translations = {
     },
     // Sidebar
     sidebar: {
+      overview: 'Overview',
       gettingStarted: 'Getting Started',
       installation: 'Installation',
       quickStart: 'Quick Start',
@@ -204,6 +205,7 @@ export const translations = {
       },    },
     // Sidebar
     sidebar: {
+      overview: 'Visão Geral',
       gettingStarted: 'Primeiros Passos',
       installation: 'Instalação',
       quickStart: 'Início Rápido',

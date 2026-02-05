@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useLanguage } from '../../i18n/LanguageContext';
-import { CodeBlock } from '../../components/CodeBlock/CodeBlock';
+import { useLanguage } from '../../../../i18n/LanguageContext';
+import { CodeBlock } from '../../../../components/CodeBlock/CodeBlock';
 
 export function ApiUtilities() {
   const { language } = useLanguage();
@@ -51,7 +51,7 @@ interface ApiClientConfig {
       <CodeBlock code={utilitiesCode} language="tsx" />
 
       <nav className="docs-nav">
-        <Link to="/docs/request/api/types" className="docs-nav-link">
+        <Link to="/docs/request/reference/types" className="docs-nav-link">
           <span className="docs-nav-label">Previous</span>
           <span className="docs-nav-title">Types API</span>
         </Link>

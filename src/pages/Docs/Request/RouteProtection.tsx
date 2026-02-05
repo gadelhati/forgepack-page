@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useLanguage } from '../../i18n/LanguageContext';
-import { CodeBlock } from '../../components/CodeBlock/CodeBlock';
+import { useLanguage } from '../../../i18n/LanguageContext';
+import { CodeBlock } from '../../../components/CodeBlock/CodeBlock';
 
 export function RouteProtection() {
   const { language } = useLanguage();

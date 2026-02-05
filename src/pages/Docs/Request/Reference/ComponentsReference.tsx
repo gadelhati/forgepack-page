@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useLanguage } from '../../i18n/LanguageContext';
-import { CodeBlock } from '../../components/CodeBlock/CodeBlock';
+import { useLanguage } from '../../../../i18n/LanguageContext';
+import { CodeBlock } from '../../../../components/CodeBlock/CodeBlock';
 
 export function ApiComponents() {
   const { language } = useLanguage();
@@ -56,11 +56,11 @@ export function ApiComponents() {
       <CodeBlock code={requireAuthCode} language="tsx" />
 
       <nav className="docs-nav">
-        <Link to="/docs/request/api/hooks" className="docs-nav-link">
+        <Link to="/docs/request/reference/hooks" className="docs-nav-link">
           <span className="docs-nav-label">Previous</span>
           <span className="docs-nav-title">Hooks API</span>
         </Link>
-        <Link to="/docs/request/api/services" className="docs-nav-link next">
+        <Link to="/docs/request/reference/services" className="docs-nav-link next">
           <span className="docs-nav-label">Next</span>
           <span className="docs-nav-title">Services API</span>
         </Link>

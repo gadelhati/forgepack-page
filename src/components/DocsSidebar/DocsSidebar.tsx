@@ -12,8 +12,6 @@ export function DocsSidebar({ isOpen, onClose }: DocsSidebarProps) {
   const { t } = useLanguage();
   const location = useLocation();
 
-  const isActive = (path: string) => location.pathname === path;
-
   // Detect package from URL path
   const pathSegments = location.pathname.split('/');
   const currentPackage = pathSegments[2] || 'request'; // /docs/[package]/...
@@ -26,29 +24,10 @@ export function DocsSidebar({ isOpen, onClose }: DocsSidebarProps) {
           version: 'v1.0.0',
           sections: [
             {
-              title: t.sidebar.gettingStarted,
+              title: t.sidebar.overview,
               items: [
-                { label: t.sidebar.installation, path: '/docs/leaflet/getting-started' },
-                { label: t.sidebar.quickStart, path: '/docs/leaflet/quick-start' },
-              ],
-            },
-            {
-              title: t.sidebar.guides,
-              items: [
-                { label: t.sidebar.mapConfiguration, path: '/docs/leaflet/map-configuration' },
-                { label: t.sidebar.layerManagement, path: '/docs/leaflet/layer-management' },
-                { label: t.sidebar.interactiveDrawing, path: '/docs/leaflet/interactive-drawing' },
-                { label: t.sidebar.fileProcessing, path: '/docs/leaflet/file-processing' },
-                { label: t.sidebar.styling, path: '/docs/leaflet/styling' },
-              ],
-            },
-            {
-              title: t.sidebar.apiReference,
-              items: [
-                { label: t.sidebar.hooks, path: '/docs/leaflet/api/hooks' },
-                { label: t.sidebar.components, path: '/docs/leaflet/api/components' },
-                { label: t.sidebar.utilities, path: '/docs/leaflet/api/utilities' },
-                { label: t.sidebar.types, path: '/docs/leaflet/api/types' },
+                { label: t.sidebar.overview, path: '/docs/leaflet' },
+                { label: t.sidebar.gettingStarted, path: '/docs/leaflet/getting-started' },
               ],
             },
             {
@@ -60,6 +39,16 @@ export function DocsSidebar({ isOpen, onClose }: DocsSidebarProps) {
                 { label: t.sidebar.imageOverlays, path: '/docs/leaflet/examples/image-overlays' },
               ],
             },
+            {
+              title: t.sidebar.apiReference,
+              items: [
+                { label: t.sidebar.components, path: '/docs/leaflet/reference/components' },
+                { label: t.sidebar.hooks, path: '/docs/leaflet/reference/hooks' },
+                { label: t.sidebar.services, path: '/docs/leaflet/reference/services' },
+                { label: t.sidebar.types, path: '/docs/leaflet/reference/types' },
+                { label: t.sidebar.utilities, path: '/docs/leaflet/reference/utilities' },
+              ],
+            },
           ],
         };
       default: // 'request'
@@ -68,9 +57,10 @@ export function DocsSidebar({ isOpen, onClose }: DocsSidebarProps) {
           version: 'v1.1.1',
           sections: [
             {
-              title: t.sidebar.gettingStarted,
+              title: t.sidebar.overview,
               items: [
-                { label: t.sidebar.installation, path: '/docs/request/getting-started' },
+                { label: t.sidebar.overview, path: '/docs/request' },
+                { label: t.sidebar.gettingStarted, path: '/docs/request/getting-started' },
                 { label: t.sidebar.quickStart, path: '/docs/request/quick-start' },
               ],
             },
@@ -87,11 +77,11 @@ export function DocsSidebar({ isOpen, onClose }: DocsSidebarProps) {
             {
               title: t.sidebar.apiReference,
               items: [
-                { label: t.sidebar.hooks, path: '/docs/request/api/hooks' },
-                { label: t.sidebar.components, path: '/docs/request/api/components' },
-                { label: t.sidebar.services, path: '/docs/request/api/services' },
-                { label: t.sidebar.types, path: '/docs/request/api/types' },
-                { label: t.sidebar.utilities, path: '/docs/request/api/utilities' },
+                { label: t.sidebar.hooks, path: '/docs/request/reference/hooks' },
+                { label: t.sidebar.components, path: '/docs/request/reference/components' },
+                { label: t.sidebar.services, path: '/docs/request/reference/services' },
+                { label: t.sidebar.types, path: '/docs/request/reference/types' },
+                { label: t.sidebar.utilities, path: '/docs/request/reference/utilities' },
               ],
             },
             {
@@ -127,7 +117,7 @@ export function DocsSidebar({ isOpen, onClose }: DocsSidebarProps) {
                   <li key={item.path}>
                     <NavLink
                       to={item.path}
-                      className={`sidebar-link ${isActive(item.path) ? 'active' : ''}`}
+                      className="sidebar-link"
                       onClick={onClose}
                     >
                       {item.label}
