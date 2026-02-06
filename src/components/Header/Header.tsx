@@ -33,14 +33,6 @@ export function Header() {
           >
             {t.nav.docs}
           </Link>
-          <a 
-            href="https://github.com/forgepack" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="nav-link"
-          >
-            {t.nav.github}
-          </a>
         </nav>
 
         <div className="header-actions">
