@@ -191,3 +191,99 @@
   color: var(--color-brand-primary);
   text-decoration: none !important;
 }
+
+/* Contribution section */
+.docs-contribution {
+  margin-bottom: var(--space-12);
+  padding: var(--space-8);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-lg);
+}
+
+.docs-contribution-content {
+  text-align: center;
+}
+
+.docs-contribution-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.docs-contribution-description {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-6);
+}
+
+.docs-contribution-actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.docs-contribution-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-md);
+  text-decoration: none !important;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  transition: all var(--transition-fast);
+  border: 1px solid transparent;
+}
+
+.docs-contribution-link.issue {
+  background: var(--color-accent-blue);
+  color: white;
+  border-color: var(--color-accent-blue);
+}
+
+.docs-contribution-link.issue:hover {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.docs-contribution-link.pr {
+  background: var(--color-brand-primary);
+  color: var(--color-text-inverse);
+  border-color: var(--color-brand-primary);
+}
+
+.docs-contribution-link.pr:hover {
+  background: var(--color-brand-secondary);
+  border-color: var(--color-brand-secondary);
+  color: var(--color-text-inverse);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.docs-contribution-icon {
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .docs-contribution {
+    margin-top: var(--space-12);
+    padding: var(--space-6);
+  }
+  
+  .docs-contribution-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .docs-contribution-link {
+    width: 100%;
+    max-width: 200px;
+    justify-content: center;
+  }
+}

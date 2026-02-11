@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../../../i18n/LanguageContext';
 import { CodeBlock } from '../../../../components/CodeBlock/CodeBlock';
+import { DocsNavigation } from '@/components/DocsNavigation/DocsNavigation';
 
 export function BasicMapExample() {
   const { language } = useLanguage();
@@ -292,16 +293,8 @@ export const MapWithLoading = () => {
         <CodeBlock code={loadingMapCode} language="tsx" filename="MapWithLoading.tsx" />
       </section>
 
-      <nav className="docs-nav">
-        <Link to="/docs/leaflet/getting-started" className="docs-nav-link">
-          <span className="docs-nav-label">{language === 'en' ? 'Previous' : 'Anterior'}</span>
-          <span className="docs-nav-title">{language === 'en' ? 'Getting Started' : 'Começar'}</span>
-        </Link>
-        <Link to="/docs/leaflet/examples/markers" className="docs-nav-link next">
-          <span className="docs-nav-label">{language === 'en' ? 'Next' : 'Próximo'}</span>
-          <span className="docs-nav-title">{language === 'en' ? 'Markers Examples' : 'Exemplos de Marcadores'}</span>
-        </Link>
-      </nav>
+      <DocsNavigation />
+      
     </div>
   );
 }

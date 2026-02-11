@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../../../i18n/LanguageContext';
 import { CodeBlock } from '../../../../components/CodeBlock/CodeBlock';
+import { DocsNavigation } from '@/components/DocsNavigation/DocsNavigation';
 
 export function TypesReference() {
   const { language } = useLanguage();
@@ -387,24 +388,7 @@ const {
 }: UseMapReturn = useMap()`} language="tsx" />
       </section>
 
-      <nav className="docs-nav">
-        <Link to="/docs/leaflet/reference/services" className="docs-nav-link docs-nav-prev">
-          <span className="docs-nav-label">
-            {language === 'en' ? 'Previous' : 'Anterior'}
-          </span>
-          <span className="docs-nav-title">
-            {language === 'en' ? 'Services API' : 'API de Serviços'}
-          </span>
-        </Link>
-        <Link to="/docs/leaflet/reference/utilities" className="docs-nav-link docs-nav-next">
-          <span className="docs-nav-label">
-            {language === 'en' ? 'Next' : 'Próximo'}
-          </span>
-          <span className="docs-nav-title">
-            {language === 'en' ? 'Utilities API' : 'API de Utilitários'}
-          </span>
-        </Link>
-      </nav>
+      <DocsNavigation />
     </div>
   );
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../../../i18n/LanguageContext';
 import { CodeBlock } from '../../../../components/CodeBlock/CodeBlock';
+import { DocsNavigation } from '@/components/DocsNavigation';
 
 export function ServicesReference() {
   const { language } = useLanguage();
@@ -282,24 +283,7 @@ export const generateImageThumbnail = (
         </p>
       </section>
 
-      <nav className="docs-nav">
-        <Link to="/docs/leaflet/reference/hooks" className="docs-nav-link docs-nav-prev">
-          <span className="docs-nav-label">
-            {language === 'en' ? 'Previous' : 'Anterior'}
-          </span>
-          <span className="docs-nav-title">
-            {language === 'en' ? 'Hooks API' : 'API de Hooks'}
-          </span>
-        </Link>
-        <Link to="/docs/leaflet/reference/types" className="docs-nav-link docs-nav-next">
-          <span className="docs-nav-label">
-            {language === 'en' ? 'Next' : 'Próximo'}
-          </span>
-          <span className="docs-nav-title">
-            {language === 'en' ? 'Types API' : 'API de Tipos'}
-          </span>
-        </Link>
-      </nav>
+      <DocsNavigation />
     </div>
   );
 }

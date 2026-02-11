@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../../../i18n/LanguageContext';
 import { CodeBlock } from '../../../../components/CodeBlock/CodeBlock';
+import { DocsNavigation } from '@/components/DocsNavigation/DocsNavigation';
 
 export function ImageOverlaysExample() {
   const { language } = useLanguage();
@@ -223,16 +224,7 @@ export function GeorefImageOverlay() {
         </div>
       </section>
 
-      <nav className="docs-nav">
-        <Link to="/docs/leaflet/examples/route-planning" className="docs-nav-link">
-          <span className="docs-nav-label">{language === 'en' ? 'Previous' : 'Anterior'}</span>
-          <span className="docs-nav-title">{language === 'en' ? 'Route Planning' : 'Planejamento de Rotas'}</span>
-        </Link>
-        <Link to="/docs/leaflet/reference/components" className="docs-nav-link next">
-          <span className="docs-nav-label">{language === 'en' ? 'Next' : 'Próximo'}</span>
-          <span className="docs-nav-title">{language === 'en' ? 'Components API' : 'API dos Componentes'}</span>
-        </Link>
-      </nav>
+      <DocsNavigation />
     </div>
   );
 }

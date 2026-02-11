@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../../../i18n/LanguageContext';
 import { CodeBlock } from '../../../../components/CodeBlock/CodeBlock';
+import { DocsNavigation } from '@/components/DocsNavigation';
 
 export function RoutePlanningExample() {
   const { language } = useLanguage();
@@ -461,16 +462,7 @@ export const InformativeRoute = () => {
         </ul>
       </section>
 
-      <nav className="docs-nav">
-        <Link to="/docs/leaflet/examples/markers" className="docs-nav-link">
-          <span className="docs-nav-label">{language === 'en' ? 'Previous' : 'Anterior'}</span>
-          <span className="docs-nav-title">{language === 'en' ? 'Markers Examples' : 'Exemplos de Marcadores'}</span>
-        </Link>
-        <Link to="/docs/leaflet/examples/image-overlays" className="docs-nav-link next">
-          <span className="docs-nav-label">{language === 'en' ? 'Next' : 'Próximo'}</span>
-          <span className="docs-nav-title">{language === 'en' ? 'Image Overlays' : 'Sobreposições de Imagem'}</span>
-        </Link>
-      </nav>
+      <DocsNavigation />
     </div>
   );
 }

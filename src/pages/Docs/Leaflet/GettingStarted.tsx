@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../../i18n/LanguageContext';
 import { CodeBlock } from '../../../components/CodeBlock/CodeBlock';
+import { DocsNavigation } from '../../../components/DocsNavigation';
 
 export function GettingStarted() {
   const { language } = useLanguage();
@@ -273,6 +274,8 @@ import "./styles/useMap.css"`;
           <span className="docs-nav-title">{language === 'en' ? 'Basic Map Examples' : 'Exemplos de Mapas Básicos'}</span>
         </Link>
       </nav>
+
+      <DocsNavigation />
     </div>
   );
 }

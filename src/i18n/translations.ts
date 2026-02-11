@@ -131,6 +131,11 @@ export const translations = {
       editPage: 'Edit this page',
       nextPage: 'Next',
       prevPage: 'Previous',
+      contributionTitle: 'Help improve this documentation',
+      foundError: 'Found an error or inconsistency?',
+      openIssue: 'Open an Issue',
+      suggestChanges: 'Suggest changes',
+      openPR: 'Open a Pull Request',
     },
   },
   pt: {
@@ -260,6 +265,11 @@ export const translations = {
       editPage: 'Editar esta página',
       nextPage: 'Próximo',
       prevPage: 'Anterior',
+      contributionTitle: 'Ajude a melhorar esta documentação',
+      foundError: 'Encontrou um erro ou inconsistência?',
+      openIssue: 'Abrir uma Issue',
+      suggestChanges: 'Sugerir alterações',
+      openPR: 'Abrir um Pull Request',
     },
   },
 };

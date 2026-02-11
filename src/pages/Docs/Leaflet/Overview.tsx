@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../../i18n/LanguageContext';
 import { CodeBlock } from '../../../components/CodeBlock/CodeBlock';
+import { DocsNavigation } from '../../../components/DocsNavigation';
 
 export function LeafletOverview() {
   const { language } = useLanguage();
@@ -122,13 +123,8 @@ export default App`;
           <li>{language === 'en' ? 'Modern bundler (Vite, Webpack, etc.)' : 'Bundler moderno (Vite, Webpack, etc.)'}</li>
         </ul>
       </section>
-      
-      <nav className="docs-nav">
-        <Link to="/docs/leaflet/getting-started" className="docs-nav-link next">
-          <span className="docs-nav-label">{language === 'en' ? 'Next' : 'Próximo'}</span>
-          <span className="docs-nav-title">{language === 'en' ? 'Getting Started' : 'Começar'}</span>
-        </Link>
-      </nav>
+
+      <DocsNavigation />
 
       <footer className="docs-footer">
         <p>

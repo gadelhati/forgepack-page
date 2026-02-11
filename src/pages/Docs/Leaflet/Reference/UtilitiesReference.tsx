@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../../../i18n/LanguageContext';
 import { CodeBlock } from '../../../../components/CodeBlock/CodeBlock';
+import { DocsNavigation } from '@/components/DocsNavigation/DocsNavigation';
 
 export function UtilitiesReference() {
   const { language } = useLanguage();
@@ -475,16 +476,7 @@ helpers.downloadData(layerData, 'route-data.json', 'json')`} language="tsx" />
         </ul>
       </section>
 
-      <nav className="docs-nav">
-        <Link to="/docs/leaflet/reference/types" className="docs-nav-link docs-nav-prev">
-          <span className="docs-nav-label">
-            {language === 'en' ? 'Previous' : 'Anterior'}
-          </span>
-          <span className="docs-nav-title">
-            {language === 'en' ? 'Types API' : 'API de Tipos'}
-          </span>
-        </Link>
-      </nav>
+      <DocsNavigation />
     </div>
   );
 }

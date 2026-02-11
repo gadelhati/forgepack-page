@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../../../i18n/LanguageContext';
 import { CodeBlock } from '../../../../components/CodeBlock/CodeBlock';
+import { DocsNavigation } from '@/components/DocsNavigation/DocsNavigation';
 
 export function MarkersExample() {
   const { language } = useLanguage();
@@ -282,16 +283,7 @@ export const InteractiveMarkers = () => {
 -20.3155,-40.2872,"Port of Vitória"`} language="csv" />
       </section>
 
-      <nav className="docs-nav">
-        <Link to="/docs/leaflet/examples/basic-map" className="docs-nav-link">
-          <span className="docs-nav-label">{language === 'en' ? 'Previous' : 'Anterior'}</span>
-          <span className="docs-nav-title">{language === 'en' ? 'Basic Map Examples' : 'Exemplos de Mapas Básicos'}</span>
-        </Link>
-        <Link to="/docs/leaflet/examples/route-planning" className="docs-nav-link next">
-          <span className="docs-nav-label">{language === 'en' ? 'Next' : 'Próximo'}</span>
-          <span className="docs-nav-title">{language === 'en' ? 'Route Planning' : 'Planejamento de Rotas'}</span>
-        </Link>
-      </nav>
+      <DocsNavigation />
     </div>
   );
 }

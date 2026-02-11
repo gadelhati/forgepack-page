@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../../../i18n/LanguageContext';
 import { CodeBlock } from '../../../../components/CodeBlock/CodeBlock';
+import { DocsNavigation } from '@/components/DocsNavigation/DocsNavigation';
 
 export function ComponentsReference() {
   const { language } = useLanguage();
@@ -248,16 +249,7 @@ Example: -23.1_-43.5_-22.8_-43.0.png" language="text" />
 -20.3155 -40.2872" language="text" />
       </section>
 
-      <nav className="docs-nav">
-        <Link to="/docs/leaflet/examples/image-overlays" className="docs-nav-link">
-          <span className="docs-nav-label">{language === 'en' ? 'Previous' : 'Anterior'}</span>
-          <span className="docs-nav-title">{language === 'en' ? 'Image Overlays' : 'Sobreposições de Imagem'}</span>
-        </Link>
-        <Link to="/docs/leaflet/reference/hooks" className="docs-nav-link next">
-          <span className="docs-nav-label">{language === 'en' ? 'Next' : 'Próximo'}</span>
-          <span className="docs-nav-title">{language === 'en' ? 'Hooks API' : 'API dos Hooks'}</span>
-        </Link>
-      </nav>
+      <DocsNavigation />
     </div>
   );
 }
