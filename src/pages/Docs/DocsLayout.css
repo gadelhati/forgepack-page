@@ -18,9 +18,58 @@
 }
 
 .docs-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   margin-bottom: var(--space-7);
   padding-bottom: var(--space-3);
   border-bottom: 1px solid var(--color-border);
+}
+
+/* Remove margin from package selector in docs header */
+.docs-header .package-selector {
+  margin-bottom: 0;
+}
+
+.docs-npm-btn {
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 0.75rem;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: 6px;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.docs-npm-btn:hover:not(:disabled) {
+  background: var(--color-bg-tertiary);
+  border-color: var(--color-brand-primary);
+  color: var(--color-brand-primary);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.docs-npm-btn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.docs-npm-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: var(--color-bg-muted);
+  color: var(--color-text-muted);
+}
+
+.docs-npm-btn svg {
+  flex-shrink: 0;
 }
 
 @media (max-width: 1024px) {
@@ -40,6 +89,26 @@
 
   .docs-content h3 {
     margin-top: var(--space-5);
+  }
+
+  .docs-header {
+    flex-direction: row;
+    gap: 0.75rem;
+  }
+
+  .docs-npm-btn {
+    height: 3rem;
+    padding: 0 0.5rem;
+    min-width: auto;
+  }
+
+  .docs-npm-btn span {
+    display: none;
+  }
+
+  /* Ensure PackageSelector takes remaining space on mobile */
+  .docs-header .package-selector {
+    flex: 1;
   }
 }
 

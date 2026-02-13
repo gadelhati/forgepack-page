@@ -8,10 +8,11 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem 1rem;
+  height: 3rem;
+  padding: 0 1rem;
   background: var(--color-bg-secondary);
   border: 1px solid var(--color-border-primary);
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
   transition: all 0.2s ease;
   min-width: 250px;
@@ -92,24 +93,71 @@
   padding: 0.75rem 1rem;
   text-decoration: none !important;
   color: var(--color-text-primary);
-  border-bottom: 1px solid var(--color-border-primary);
   transition: all 0.2s ease;
   background: transparent;
+  flex: 1;
 }
 
-.package-option:last-child {
+.package-option-wrapper {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--color-border-primary);
+  transition: all 0.2s ease;
+}
+
+.package-option-wrapper:last-child {
   border-bottom: none;
 }
 
-.package-option:hover {
+.package-option-wrapper:hover {
   background: var(--color-bg-secondary);
+}
+
+.package-option-wrapper:hover .package-option,
+.package-option-wrapper:hover .npm-link-btn {
   color: var(--color-text-primary);
+}
+
+.package-option:hover {
   text-decoration: none !important;
 }
 
 .package-option.active {
   background: var(--color-bg-tertiary);
   color: var(--color-brand-primary);
+}
+
+.package-option-wrapper.active {
+  background: var(--color-bg-tertiary);
+}
+
+.package-option-wrapper.active .package-option {
+  color: var(--color-brand-primary);
+}
+
+.npm-link-btn {
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+
+.npm-link-btn:hover {
+  color: var(--color-brand-primary);
+  background: var(--color-bg-tertiary);
+  transform: scale(1.1);
+}
+
+.npm-link-btn:active {
+  transform: scale(0.95);
 }
 
 .package-option-main {
@@ -139,6 +187,12 @@
   color: var(--color-text-muted);
 }
 
+/* Tooltip styling */
+.npm-link-btn:focus {
+  outline: 2px solid var(--color-brand-primary);
+  outline-offset: 2px;
+}
+
 /* Mobile responsiveness */
 @media (max-width: 768px) {
   .package-selector {
@@ -146,6 +200,7 @@
   }
   
   .current-package {
+    height: 3rem;
     min-width: auto;
     width: 100%;
   }
